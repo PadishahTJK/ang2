@@ -46,7 +46,7 @@ var product_service_1 = require("./products/product.service");
 // })
 var AppComponent = (function () {
     function AppComponent() {
-        this.pageTitle = 'Product  Management';
+        this.pageTitle = 'Product Management';
     }
     return AppComponent;
 }());

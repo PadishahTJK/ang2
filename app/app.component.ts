@@ -75,6 +75,6 @@ import {ProductService} from './products/product.service';
 })
 
 export class AppComponent {
-    pageTitle: string = 'Product  Management';
+    pageTitle: string = 'Product Management';
     
 }
