@@ -7,8 +7,10 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
 
-import{IProduct} from './product';
+import{IProduct} from './product'; 
 
+
+//Encapsulate  it in a  Service
 //Decorator
 @Injectable()
 

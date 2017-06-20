@@ -9,39 +9,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-//import
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 var Observable_1 = require("rxjs/Observable");
 require("rxjs/add/operator/map");
 require("rxjs/add/operator/do");
 require("rxjs/add/operator/catch");
-//Encapsulate  it in a  Service
-//Decorator
-var ProductService = (function () {
-    //
-    function ProductService(_http) {
+var ProductServiceTest = (function () {
+    function ProductServiceTest(_http) {
         this._http = _http;
-        this._productUrl = 'api/products/products.json';
+        this._productUrl = '';
     }
-    //Method  kotorie vizivatsya  budet
-    ProductService.prototype.getProducts = function () {
+    ProductServiceTest.prototype.getProduct = function () {
         return this._http.get(this._productUrl)
             .map(function (response) { return response.json(); })
-            .do(function (data) { return console.log('All:' + JSON.stringify(data)); })
+            .do(function (data) { return console.log('ALL:' + JSON.stringify(data)); })
             .catch(this.handleError);
     };
-    ProductService.prototype.handleError = function (error) {
+    //Error  handling  Method
+    ProductServiceTest.prototype.handleError = function (error) {
         console.error(error);
-        return Observable_1.Observable.throw(error.json().error || 'Server error');
+        return Observable_1.Observable.throw(error.json().error || 'Server Error');
     };
-    return ProductService;
-}()); //class ProductService
-ProductService = __decorate([
-    core_1.Injectable()
-    // class s methoda
-    ,
+    return ProductServiceTest;
+}());
+ProductServiceTest = __decorate([
+    core_1.Injectable(),
     __metadata("design:paramtypes", [http_1.Http])
-], ProductService);
-exports.ProductService = ProductService;
-//# sourceMappingURL=product.service.js.map
+], ProductServiceTest);
+exports.ProductServiceTest = ProductServiceTest;
+//# sourceMappingURL=product.service.test.js.map

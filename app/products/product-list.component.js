@@ -34,6 +34,7 @@ var ProductListComponent = (function () {
         console.log('In OnInit  method / Lifecycle  Ininitial Method is started');
         // Here  comes   the code of Constructor 
         //  this.products =this._productService.getProduct();
+        //Subscribe  and  waits  fot  the data  or  Notification
         this._productService.getProducts()
             .subscribe(function (products) { return _this.products = products; }, function (error) { return _this.errorMessage = error; });
     };

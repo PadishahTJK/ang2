@@ -42,6 +42,8 @@ constructor(private _productService: ProductService){
         console.log('In OnInit  method / Lifecycle  Ininitial Method is started');
        // Here  comes   the code of Constructor 
       //  this.products =this._productService.getProduct();
+
+      //Subscribe  and  waits  fot  the data  or  Notification
       this._productService.getProducts()
                .subscribe(
                     products => this.products =products,
@@ -60,7 +62,7 @@ constructor(private _productService: ProductService){
     }
 
     // onRatingClicked(message: string):void{
-    //     this.PageTitle ='Product List:' +message;
+    //     this.PageTitle ='Product List:' +message; 
     // }
 
     // onNotify(message : string):void{

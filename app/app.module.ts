@@ -21,8 +21,6 @@ import{ ProductDetailComponent } from  './products/product-detail.component';
 //Router
 import{RouterModule} from '@angular/router';
 
-
-
 @NgModule({
   imports: [ BrowserModule,
              FormsModule,
