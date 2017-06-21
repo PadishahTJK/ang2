@@ -20,6 +20,8 @@ import{WelcomeComponent} from './home/welcome.component';
 import{ ProductDetailComponent } from  './products/product-detail.component';
 //Router
 import{RouterModule} from '@angular/router';
+//
+import{ ProductDetailGuard } from './products/product-guard.service';
 
 @NgModule({
   imports: [ BrowserModule,
@@ -27,9 +29,11 @@ import{RouterModule} from '@angular/router';
              HttpModule,
              RouterModule.forRoot([ 
                {path:'products',component:ProductListComponent },
-               {path:'product/:id',component:ProductDetailComponent},
+               {path:'product/:id',
+               canActivate:[ProductDetailGuard],
+               component:ProductDetailComponent},
                {path:'welcome',component:WelcomeComponent},
-               {path:'',redirectTo:'welcome',pathMatch:'full'},
+               {path:'',redirectTo:'welcome',pathMatch:'full'}, 
                {path:'**',redirectTo:'welcome',pathMatch:'full'}
              ])  
            ],
@@ -38,7 +42,7 @@ import{RouterModule} from '@angular/router';
                 ProductFilterPipe,
                 
                 TestListComponent,
-                TaftishIlmComponent,
+                TaftishIlmComponent, 
                 ProvComponent,
                 StarComponent,
                 WelcomeComponent,
@@ -46,6 +50,7 @@ import{RouterModule} from '@angular/router';
 
                 ],
 
+  providers:[ProductDetailGuard], 
   bootstrap: [ AppComponent ]
 })
 export class AppModule {

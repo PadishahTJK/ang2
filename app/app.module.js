@@ -26,6 +26,8 @@ var welcome_component_1 = require("./home/welcome.component");
 var product_detail_component_1 = require("./products/product-detail.component");
 //Router
 var router_1 = require("@angular/router");
+//
+var product_guard_service_1 = require("./products/product-guard.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -38,7 +40,9 @@ AppModule = __decorate([
             http_1.HttpModule,
             router_1.RouterModule.forRoot([
                 { path: 'products', component: product_list_component_1.ProductListComponent },
-                { path: 'product/:id', component: product_detail_component_1.ProductDetailComponent },
+                { path: 'product/:id',
+                    canActivate: [product_guard_service_1.ProductDetailGuard],
+                    component: product_detail_component_1.ProductDetailComponent },
                 { path: 'welcome', component: welcome_component_1.WelcomeComponent },
                 { path: '', redirectTo: 'welcome', pathMatch: 'full' },
                 { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
@@ -54,6 +58,7 @@ AppModule = __decorate([
             welcome_component_1.WelcomeComponent,
             product_detail_component_1.ProductDetailComponent
         ],
+        providers: [product_guard_service_1.ProductDetailGuard],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
