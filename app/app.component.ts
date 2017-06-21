@@ -67,7 +67,7 @@ import {ProductService} from './products/product.service';
             <router-outlet></router-outlet>
         </div>
      </div>
-   
+    
      `,
      //Creating  a provider  that  can  return 
     providers:[ProductService]

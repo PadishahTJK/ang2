@@ -48,7 +48,7 @@ import{ ProductDetailGuard } from './products/product-guard.service';
                 WelcomeComponent,
                 ProductDetailComponent
 
-                ],
+                ], 
 
   providers:[ProductDetailGuard], 
   bootstrap: [ AppComponent ]
