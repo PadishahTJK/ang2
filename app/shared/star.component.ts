@@ -8,7 +8,7 @@ import {Component,OnChanges,Input,Output,EventEmitter} from '@angular/core';
   templateUrl: 'star.component.html',
     styleUrls: ['star.component.css']
 
-})
+})  
 
 export class  StarComponent implements OnChanges{
     //Passing rating NU.  into  nested Component

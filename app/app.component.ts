@@ -50,6 +50,13 @@ import {ProductService} from './products/product.service';
 //           `
 // })
 
+
+/*
+   Glavnii  komponent   kotorii  vizivaetsya  ot   app.module.ts
+   v otdele  bootsrap
+   ...
+   
+*/
 @Component({
     selector: 'pm-app',
     template: `
@@ -70,7 +77,7 @@ import {ProductService} from './products/product.service';
     
      `,
      //Creating  a provider  that  can  return 
-    providers:[ProductService]
+    // providers:[ProductService]
 
 })
 

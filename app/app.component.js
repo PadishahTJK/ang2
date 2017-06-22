@@ -33,7 +33,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // export class AppComponent{
 // }
 var core_1 = require("@angular/core");
-var product_service_1 = require("./products/product.service");
 // @Component({
 //    // selector:'<pm-app>',
 //    selector: 'pm-app',
@@ -44,6 +43,12 @@ var product_service_1 = require("./products/product.service");
 //         </div>
 //           `
 // })
+/*
+   Glavnii  komponent   kotorii  vizivaetsya  ot   app.module.ts
+   v otdele  bootsrap
+   ...
+   
+*/
 var AppComponent = (function () {
     function AppComponent() {
         this.pageTitle = 'Product Management';
@@ -54,8 +59,6 @@ AppComponent = __decorate([
     core_1.Component({
         selector: 'pm-app',
         template: "\n    <div>\n        <nav class='navbar navbar-default'>\n            <div class='container-fluid'>\n                <a class='navbar-brand'>{{pageTitle}}</a>\n                <ul class='nav navbar-nav'>\n                    <li><a [routerLink]=\"['/welcome']\">Home</a></li>\n                    <li><a [routerLink]=\"['/products']\">Product List</a></li>\n                </ul>\n            </div>\n        </nav>\n        <div class='container'>\n            <router-outlet></router-outlet>\n        </div>\n     </div>\n    \n     ",
-        //Creating  a provider  that  can  return 
-        providers: [product_service_1.ProductService]
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
